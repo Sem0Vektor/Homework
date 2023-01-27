@@ -45,8 +45,11 @@ int FindEvenNumber(int[] array)
 Console.Write("Enter length of an array ");
 int len = int.Parse(Console.ReadLine()!);
 
-PrintArray(CreateAndFillArray(len));
+int[] arr = new int[len];
+CreateAndFillArray(len).CopyTo(arr, 0);
+
+PrintArray(arr);
 
     Console.WriteLine();
 
-Console.Write($"Amount of even numbers in the array is {FindEvenNumber(CreateAndFillArray(len))}");
+Console.Write($"Amount of even numbers in the array is {FindEvenNumber(arr)}");
