@@ -5,9 +5,9 @@
 */
 
 double[] CreateAndFillArray(int length, double minValue, double maxValue)
-{   
+{
     double[] array = new double[length];
-    for(int i = 0; i < length; i++)
+    for (int i = 0; i < length; i++)
     {
         double d = new Random().NextDouble();
         double rD = d * (maxValue - minValue) + minValue;
@@ -19,9 +19,9 @@ double[] CreateAndFillArray(int length, double minValue, double maxValue)
 void PrintArray(double[] array)
 {
     Console.Write("[ ");
-    for(int i = 0; i < array.Length; i++)
-    {   
-        if(i == array.Length - 1) Console.Write($"{array[i]} ");
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i == array.Length - 1) Console.Write($"{array[i]} ");
 
         else Console.Write($"{array[i]}, ");
     }
@@ -32,11 +32,11 @@ double DifBetweenMaxNumAndMinNum(double[] array)
 {
     double min = 0;
     double max = 0;
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if(array[i] < min) min = array[i];
+        if (array[i] < min) min = array[i];
         else
-        if(array[i] > max) max = array[i];
+        if (array[i] > max) max = array[i];
     }
     double dif = max - min;
     return dif;

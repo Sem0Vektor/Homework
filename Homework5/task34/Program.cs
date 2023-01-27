@@ -6,9 +6,9 @@
 */
 
 int[] CreateAndFillArray(int length, int minValue, int maxValue)
-{   
+{
     int[] array = new int[length];
-    for(int i = 0; i < length; i++)
+    for (int i = 0; i < length; i++)
     {
         array[i] = new Random().Next(minValue, maxValue + 1);
     }
@@ -18,10 +18,10 @@ int[] CreateAndFillArray(int length, int minValue, int maxValue)
 void PrintArray(int[] array)
 {
     Console.Write("[ ");
-    for(int i = 0; i < array.Length; i++)
-    {   
-        if(i == array.Length - 1) Console.Write($"{array[i]} ");
-        
+    for (int i = 0; i < array.Length; i++)
+    {
+        if (i == array.Length - 1) Console.Write($"{array[i]} ");
+
         else Console.Write($"{array[i]}, ");
     }
     Console.Write("]");
@@ -30,9 +30,9 @@ void PrintArray(int[] array)
 int FindEvenNumber(int[] array)
 {
     int countOfEvenNumvers = 0;
-    for(int i = 0; i < array.Length; i++)
+    for (int i = 0; i < array.Length; i++)
     {
-        if(array[i] % 2 == 0) countOfEvenNumvers++;
+        if (array[i] % 2 == 0) countOfEvenNumvers++;
     }
     return countOfEvenNumvers;
 }
