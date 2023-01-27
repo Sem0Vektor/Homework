@@ -5,12 +5,12 @@
 [345, 897, 568, 234] -> 2
 */
 
-int[] CreateAndFillArray(int length)
+int[] CreateAndFillArray(int length, int minValue, int maxValue)
 {   
     int[] array = new int[length];
     for(int i = 0; i < length; i++)
     {
-        array[i] = new Random().Next(100, 1000);
+        array[i] = new Random().Next(minValue, maxValue + 1);
     }
     return array;
 }
@@ -40,8 +40,14 @@ int FindEvenNumber(int[] array)
 Console.Write("Enter length of an array ");
 int length = int.Parse(Console.ReadLine()!);
 
+Console.Write("Enter minimum value of random numbers ");
+int minValue = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter maximum value of random numbers ");
+int maxValue = int.Parse(Console.ReadLine()!);
+
 int[] arr = new int[length];
-CreateAndFillArray(length).CopyTo(arr, 0);
+CreateAndFillArray(length, minValue, maxValue).CopyTo(arr, 0);
 
 PrintArray(arr);
 
