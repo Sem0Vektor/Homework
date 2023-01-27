@@ -20,14 +20,9 @@ void PrintArray(int[] array)
     Console.Write("[ ");
     for(int i = 0; i < array.Length; i++)
     {   
-        if(i == array.Length - 1)
-        {
-            Console.Write($"{array[i]} ");
-        }
-        else
-        {
-            Console.Write($"{array[i]}, ");
-        }
+        if(i == array.Length - 1) Console.Write($"{array[i]} ");
+        
+        else Console.Write($"{array[i]}, ");
     }
     Console.Write("]");
 }
@@ -43,13 +38,13 @@ int FindEvenNumber(int[] array)
 }
 
 Console.Write("Enter length of an array ");
-int len = int.Parse(Console.ReadLine()!);
+int length = int.Parse(Console.ReadLine()!);
 
-int[] arr = new int[len];
-CreateAndFillArray(len).CopyTo(arr, 0);
+int[] arr = new int[length];
+CreateAndFillArray(length).CopyTo(arr, 0);
 
 PrintArray(arr);
 
-    Console.WriteLine();
+Console.WriteLine();
 
 Console.Write($"Amount of even numbers in the array is {FindEvenNumber(arr)}");
