@@ -1,17 +1,24 @@
 ﻿int SumOfDigits(int number)
 {   
-    if(number < 0)
-    {   
-        number = number*(-1);
-        string str;
-        str = number.ToString();
-        return str.Length;
+    int sum = 0;
+    if (number > 0)
+    {
+        while(number > 0)
+        {
+            sum = sum + number % 10;
+            number = number / 10;
+        }
+        return sum;
     }
     else
     {
-        string str;
-        str = number.ToString();
-        return str.Length;
+        number = number*(-1);
+        while(number > 0)
+        {
+            sum = sum + number % 10;
+            number = number / 10;
+        }
+        return sum;
     }
 }
 
@@ -22,7 +29,4 @@ int n = int.Parse(Console.ReadLine()!);
 
 Console.Write($"Sum of digits is {SumOfDigits(n)}");
 
-//string s; 
-//int n = 432;
-//s = n.ToString();
-//Console.WriteLine(s.Length);
+
