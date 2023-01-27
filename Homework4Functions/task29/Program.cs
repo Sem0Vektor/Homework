@@ -6,12 +6,12 @@
 6, 1, 33 -> [6, 1, 33]
 */
 
-int[] CreateAndFillArray()
+int[] CreateAndFillArray(int length, int minValue = -100, int maxValue = 100)
 {   
-    int[] array = new int[8];
-    for(int i = 0; i < 8; i++)
+    int[] array = new int[length];
+    for(int i = 0; i < length; i++)
     {
-        array[i] = new Random().Next(1, 9);
+        array[i] = new Random().Next(minValue, maxValue);
     }
     return array;
 }
@@ -19,18 +19,24 @@ int[] CreateAndFillArray()
 void PrintArray(int[] array)
 {
     Console.Write("[ ");
-    for(int i = 0; i < 8; i++)
+    for(int i = 0; i < array.Length; i++)
     {   
-        if(i == 7)
-        {
-            Console.Write($"{array[i]} ");
-        }
-        else
-        {
-            Console.Write($"{array[i]}, ");
-        }
+        if(i == array.Length - 1) Console.Write($"{array[i]} ");
+        else Console.Write($"{array[i]}, ");
     }
     Console.Write("]");
 }
 
-PrintArray(CreateAndFillArray());
+Console.Write("Enter length of an array ");
+    int length = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter minimum value of random numbers ");
+    int minValue = int.Parse(Console.ReadLine()!);
+
+Console.Write("Enter maximum value of random numbers ");
+    int maxValue = int.Parse(Console.ReadLine()!);
+
+int[] arr = new int[length];
+CreateAndFillArray(length, minValue, maxValue).CopyTo(arr, 0);
+
+PrintArray(arr);
