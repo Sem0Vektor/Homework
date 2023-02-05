@@ -53,7 +53,7 @@ void ArithmeticMean(int[,] array)
             {
                 sum += array[r, c];
             }
-            int result = sum / array.GetLength(0);
+            int result = sum / array.GetLength(1);
             Console.WriteLine($"Arithmetic mean of the row is {result}");
         }
     }
@@ -69,7 +69,7 @@ void ArithmeticMean(int[,] array)
             {
                 sum += array[r, c];
             }
-            int result = sum / array.GetLength(1);
+            int result = sum / array.GetLength(0);
             Console.WriteLine($"Arithmetic mean of the column is {result}");
         }
     }
